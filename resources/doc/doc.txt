@@ -1,0 +1,11 @@
+----Empezar a crear el proyecto, en el programa Git:
+composer global require laravel/installer
+laravel new ejemplo
+0
+----Instalando la autentificación
+composer require laravel/breeze --dev
+php artisan breeze:install
+blade
+----Ahi ya te dará el Login y el register
+Primero crea la BD con el mismo nombre de tu carpeta del Xampp
+Luego en el mismo navegador te dará el RUN
