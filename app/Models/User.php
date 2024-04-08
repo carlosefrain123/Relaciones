@@ -44,4 +44,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    //Relación uno a uno, se encarga de recuperar información del perfil
+    public function profile(){
+        return $this->hasOne(Profile::class);
+    }
 }

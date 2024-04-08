@@ -9,3 +9,7 @@ blade
 ----Ahi ya te dará el Login y el register
 Primero crea la BD con el mismo nombre de tu carpeta del Xampp
 Luego en el mismo navegador te dará el RUN
+-----Creamos el modelo
+php artisan make:model -mc
+-----Se coloca la migración en la base de datos
+php artisan migrate
