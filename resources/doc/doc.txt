@@ -13,3 +13,5 @@ Luego en el mismo navegador te dará el RUN
 php artisan make:model -mc
 -----Se coloca la migración en la base de datos
 php artisan migrate
+-----Si quieres visualizar, utiliza el tinker
+php artisan tinker
