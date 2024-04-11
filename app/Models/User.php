@@ -45,14 +45,22 @@ class User extends Authenticatable
         ];
     }
     //Relación uno a uno, se encarga de recuperar información del perfil
-    public function profile(){
+    public function profile()
+    {
         return $this->hasOne(Profile::class);
     }
     //Relación de uno a muchos
-    public function posts(){
+    public function posts()
+    {
         return $this->hasMany(Post::class);
     }
-    public function videos(){
+    public function videos()
+    {
         return $this->hasMany(Video::class);
+    }
+    //Relación de muchos a muchos
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
     }
 }
