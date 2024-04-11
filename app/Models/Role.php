@@ -11,6 +11,10 @@ class Role extends Model
     //Relación de muchos a muchos(inversa)
     public function user(){
         /* $user= User::find($this->user_id); */
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class);
+    }
+    public function permisos(){
+        /* $user= User::find($this->user_id); */
+        return $this->belongsToMany(Permiso::class);
     }
 }
