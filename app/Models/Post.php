@@ -27,5 +27,9 @@ class Post extends Model
     public function comments(){
         return $this->morphMany(Comment::class, 'commentable');
     }
+    //Relación muchos a muchos polimorfica
+    public function posts(){
+        return $this->morphMany(Tag::class,'taggable');
+    }
 
 }
