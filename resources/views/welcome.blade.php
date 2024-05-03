@@ -7,7 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Relaciones</h1>
+    <h2 class="text-center">Relación de muchos a muchos</h2>
     <div class="row justify-content-center">
         <div class="col-auto">
             <h3>Usuario <span class="badge bg-secondary">{{$user->name}}</span></h3>
@@ -42,6 +43,7 @@
             </table>
         </div>
     </div>
+    <a href="{{ route('prueba') }}" class="btn btn-primary">Ir a Prueba</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
