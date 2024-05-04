@@ -12,6 +12,7 @@
 <body>
     <h1>Relaciones</h1>
     <h2 class="text-center">Relación de uno a muchos</h2>
+    <h3>Modo tabla</h3>
     <div class="row justify-content-center">
         <div class="col-auto">
             <table class="table table-striped table-hover">
@@ -21,18 +22,36 @@
                     <th>USERS</th>
                 </thead>
                 <tbody>
-                    @foreach ($post as $registro)
-                        <tr>
-                            <td>{{ $registro->id }}</td>
-                            <td>{{ $registro->name }}</td>
-                            {{-- <td>{{ $registro->user_id }}</td> --}}
-                            <td>{{ $registro->user->name }}</td>
-                        </tr>
+                    @foreach ($users as $user)
+                        @foreach ($user->posts as $post)
+                            <tr>
+                                <td>{{ $post->id }}</td>
+                                <td>{{ $post->name }}</td>
+                                <td>{{ $user->name }}</td>
+                            </tr>
+                        @endforeach
                     @endforeach
                 </tbody>
+
             </table>
         </div>
     </div>
+    <h3>
+        <div>
+            @foreach ($users as $user)
+                <h1>El usuario {{ $user->name }}</h1>
+                @if ($user->posts->count() > 0)
+                    <ul>
+                        @foreach ($user->posts as $post)
+                            <li>{{ $post->name }}</li>
+                        @endforeach
+                    </ul>
+                @else
+                    <p>Este usuario no tiene ningún post.</p>
+                @endif
+            @endforeach
+        </div>
+    </h3>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>

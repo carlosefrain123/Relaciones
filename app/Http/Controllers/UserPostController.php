@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class UserPostController extends Controller
 {
     public function index(){
-        $post=Post::all();
-        return view('prueba',compact('post'));
+        $users = User::with('posts')->get(); // Cargar usuarios con sus posts
+        return view('prueba', compact('users'));
     }
 }
