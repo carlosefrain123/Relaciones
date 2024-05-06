@@ -19,14 +19,14 @@
                 <thead class="bg-primary">
                     <th>ID</th>
                     <th>DESCRIPCIÓN</th>
-                    <th>USERS</th>
+                    <th>USUARIO</th>
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
                         @foreach ($user->posts as $post)
                             <tr>
                                 <td>{{ $post->id }}</td>
-                                <td>{{ $post->name }}</td>
+                                <td>{{ $post->description }}</td>
                                 <td>{{ $user->name }}</td>
                             </tr>
                         @endforeach
@@ -43,7 +43,9 @@
                 @if ($user->posts->count() > 0)
                     <ul>
                         @foreach ($user->posts as $post)
-                            <li>{{ $post->name }}</li>
+                            <a href="{{ route('prueba2', $post) }}">
+                                <li>{{ $post->name }}</li>
+                            </a>
                         @endforeach
                     </ul>
                 @else
