@@ -21,7 +21,7 @@
     <div class="row justify-content-center">
         <h2>Post relacionados</h2>
         @foreach ($similares as $similar)
-            <li><a href="">{{$similar->name}}</a></li>
+            <li><a href="{{ route('prueba2', $similar) }}">{{$similar->name}}</a></li>
         @endforeach
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
