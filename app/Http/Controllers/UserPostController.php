@@ -14,7 +14,9 @@ class UserPostController extends Controller
     }
     public function prueba2(Post $post)
     {
-        /* return $posts; */
-        return view('prueba2',compact('post'));
+        $similares=Post::where('user_id',$post->user_id)
+                            ->where('id','!=',$post->id)
+                            ->get();
+        return view('prueba2',compact('post','similares'));
     }
 }

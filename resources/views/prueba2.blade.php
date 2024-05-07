@@ -12,10 +12,17 @@
 <body>
     <h1>Relaciones</h1>
     <div class="row justify-content-center">
+        <h2>Post Principal</h2>
         <ul>
-            <h1>Bienvenido {{$post->name}}</h1>
-            <h1>Bienvenido {{$post->body}}</h1>
+            <p>Bienvenido {{ $post->name }}</p>
+            <p>Bienvenido {{ $post->body }}</p>
         </ul>
+    </div>
+    <div class="row justify-content-center">
+        <h2>Post relacionados</h2>
+        @foreach ($similares as $similar)
+            <li><a href="">{{$similar->name}}</a></li>
+        @endforeach
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
