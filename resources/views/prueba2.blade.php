@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <h1>Relaciones</h1>
+    @include('navigation')
+    <a href="#"><h1>Relaciones</h1></a>
     <div class="row justify-content-center">
         <h2>Post Principal</h2>
         <ul>

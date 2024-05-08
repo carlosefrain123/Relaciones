@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    @include('navigation')
     <h1>Relaciones</h1>
     <h2 class="text-center">Relación de uno a muchos</h2>
     <h3>Modo tabla</h3>
