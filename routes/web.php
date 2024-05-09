@@ -23,4 +23,5 @@ Route::get('/prueba',[UserPostController::class,'index'])->name('prueba');
 /* Route::get('/prueba2/{id}',[UserPostController::class,'index'])->name('prueba'); */
 Route::get('/prueba2/{post}',[UserPostController::class,'prueba2'])->name('prueba2');
 Route::get('/prueba3/{user}',[UserPostController::class,'prueba3'])->name('prueba3');
+Route::get('/prueba4/{categoria}',[UserPostController::class,'prueba4'])->name('prueba4');
 require __DIR__.'/auth.php';

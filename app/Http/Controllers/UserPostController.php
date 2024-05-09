@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -27,5 +28,8 @@ class UserPostController extends Controller
         // Pasamos tanto los posts como el usuario a la vista
         return view('prueba3', compact('posts', 'user'));
     }
-
+    public function prueba4(Categoria $categoria)
+    {
+        return $categoria->posts()->get();
+    }
 }
