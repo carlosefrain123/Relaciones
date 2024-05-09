@@ -8,9 +8,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    @foreach ($categorias as $categoria)
+                    @foreach ($users as $user)
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="">{{$categoria->name}}</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route('prueba3', $user) }}">{{$user->name}}</a>
                         </li>
                     @endforeach
                 </ul>

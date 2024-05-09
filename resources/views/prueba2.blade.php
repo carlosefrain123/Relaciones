@@ -9,7 +9,7 @@
             </ul>
         </div>
         <div class="row justify-content-center">
-            <h2>Post relacionados</h2>
+            <h2>Post relacionados con el usuario: {{$post->user->name}}</h2>
             @foreach ($similares as $similar)
                 <li><a href="{{ route('prueba2', $similar) }}">{{$similar->name}}</a></li>
             @endforeach

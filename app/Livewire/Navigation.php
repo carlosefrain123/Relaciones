@@ -2,14 +2,14 @@
 
 namespace App\Livewire;
 
-use App\Models\Categoria;
+use App\Models\User;
 use Livewire\Component;
 
 class Navigation extends Component
 {
     public function render()
     {
-        $categorias= Categoria::all();
-        return view('livewire.navigation', compact('categorias'));
+        $users= User::all();
+        return view('livewire.navigation', compact('users'));
     }
 }
