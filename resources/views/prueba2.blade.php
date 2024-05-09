@@ -1,33 +1,18 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-
-<body>
-    @include('navigation')
-    <a href="#"><h1>Relaciones</h1></a>
-    <div class="row justify-content-center">
-        <h2>Post Principal</h2>
-        <ul>
-            <p>Bienvenido {{ $post->name }}</p>
-            <p>Bienvenido {{ $post->body }}</p>
-        </ul>
+<x-app-layout>
+    <div class="container-fl">
+        <h1>Post Principal</h1>
+        <h2 class="text-center">Relación de uno a muchos</h2>
+        <div class="row justify-content-center">
+            <ul>
+                <p>Bienvenido {{ $post->name }}</p>
+                <p>Bienvenido {{ $post->body }}</p>
+            </ul>
+        </div>
+        <div class="row justify-content-center">
+            <h2>Post relacionados</h2>
+            @foreach ($similares as $similar)
+                <li><a href="{{ route('prueba2', $similar) }}">{{$similar->name}}</a></li>
+            @endforeach
+        </div>
     </div>
-    <div class="row justify-content-center">
-        <h2>Post relacionados</h2>
-        @foreach ($similares as $similar)
-            <li><a href="{{ route('prueba2', $similar) }}">{{$similar->name}}</a></li>
-        @endforeach
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-</body>
-
-</html>
+</x-app-layout>
